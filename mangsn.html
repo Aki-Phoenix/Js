@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>chan le</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	Nhập số: <input type="number" id="input_number">  </br>
+	<button onclick="nhap()" id="click">OK</button>   
+	<input type="number" id="input_ket_qua">
+	<div id="ket_qua_tong"></div>
+	<div id="so_lon_nhat_chan"></div>
+	<div id="so_lon_nhat_le"></div>
+	<div id="array_nguyen_to"></div>
+	<script type="text/javascript">
+		var array_chan = [];
+		var array_le = [];
+		function nhap(){
+			//onclick="hàm()"   bấm vào hàm trong javascrip...
+			var number = document.getElementById('input_number').value;
+			number = parseInt(number);   //parseInt() gán cho giá trị lấy về thuộc kiểu số nguyên
+			var so_du = mumber%2;
+			if (so_du ==0){
+				array_chan.push(number);    //push là hàm đẩy vào mảng.
+			}
+			else if (so_du ==1){
+				array_le.push(number);
+			}
+			var tong_chan = 0;
+			var tong_le = 0;
+			for (var i=0; i < array_le.length; i=i+1){
+				tong_chan = tong_chan + array_chan[i];
+			}
+			for (var i=0; i < array_le.length; i=i+1){
+				tong_le = tong_le + array_le[i];
+			}
+			tong = tong_chan + tong_le;
+			var so_lon_nhat_chan = array_chan[0];
+			for (var i=0; i < array_chan.length; i++){
+				if (array_chan[i] > so_lon_nhat_chan){
+					so_lon_nhat_chan = so_lon_nhat_chan[i];
+				}
+			}
+			var so_lon_nhat_le = array_le[0];
+			for (var i=0; i<array_chan.length; i++){
+				if (array_le[i] > so_lon_nhat_le){
+					so_lon_nhat_le = so_lon_nhat_le[i];
+				}
+			}
+			var array_nguyen_to = [];
+			for (j=0; j<array_nguyen_to.length; j++){
+				var check = 0;
+				for (var x=3; x<j; x+=2){
+					if (array_le[j]%array_le[x]==0){
+						check = 1;
+						break;
+					}
+				}
+				if (check == 0){
+					array_nguyen_to.push(array_le[j]);
+				}
+			}
+			document.getElementById('ket_qua_tong').innerHTML = tong; //hiển thị kiểu HTML
+			document.getElementById('so_lon_nhat_le').innerHTML = so_lon_nhat_le;
+			document.getElementById('so_lon_nhat_chan').innerHTML = so_lon_nhat_chan;
+			document.getElementById('array_nguyen_to').innerHTML = array_nguyen_to;
+		}
+
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>demo</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	Nhap so nam: 
+	<input type="number" id="input_nam">
+	<button onclick="tinh()"> OK</button>
+	</br>
+	Nam am lich la:
+	<input type="text" id="input_ket_qua">
+	<script type="text/javascript">
+		function tinh(){
+			var nam = document.getElementById('input_nam').value; 
+			nam = parseInt(nam);
+			var so_du_can = (nam -3)%10;
+			var can;
+			switch(so_du_can) {
+				case 0:
+					can="Quý";
+					break;
+				case 1:
+					can="Giáp";
+					break;
+				case 2: 
+					can="Ất";
+					break;
+				case 3:
+					can="Bính";
+					break;
+				case 4:
+					can="Đinh";
+					break;
+				case 5:
+					can="Mậu";
+					break;
+				case 6:
+					can ="Kỷ";
+					break;
+				case 7: 
+					can ="Canh";
+					break;
+				case 8:
+					can="Tân";
+					break;
+				case 9:
+					can="Nhâm";
+					break; 
+			}
+			var so_du =(nam-3)%12;
+			var chi;
+			switch(so_du) {
+				case 0:
+					chi= "Hợi";
+					break;
+				case 1:
+					chi="Tý";
+					break;
+				case 2:
+					chi="Sửu";
+					break;
+				case 3:
+					chi="Dần";
+					break;
+				case 4: 
+					chi="Mão";
+					break;
+				case 5:
+					chi="Thìn";
+					break;
+				case 6:
+					chi ="Tỵ";
+					break;
+				case 7:
+					chi ="Ngọ";
+					break;
+				case 8:
+					chi="Mùi";
+					break;
+				case 9:
+					chi="Thân";
+					break;
+				case 10:
+					chi="Dậu";
+					break;
+				case 11:
+					chi="Tuất";
+					break;
+			}
+			var nam_al = can+ " " +chi;
+			document.getElementById('input_ket_qua').value=nam_al;
+
+		} 
+	</script>
+
+
+</body>
+</html>

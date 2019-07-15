@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>bai2.16</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<h3>Tính Ngày Trong Tháng</h3>
+	Tháng/năm: <input type="number" id="input_thang"> /
+	<input type="number" id="input_nam">
+	</br>
+	<button onclick="tinh()" id="click">Tính số ngày</button> </br>
+	<input type="text" id="input_ket_qua">
+	<script type="text/javascript">
+		function tinh(){
+			var thang = document.getElementById('input_thang').value;
+			thang = parseInt(thang);
+			var ngay = 31;
+			var nam = document.getElementById('input_nam').value;
+ 	
+			switch(thang){
+				case 4:
+				case 6:
+				case 9:
+				case 11:
+					ngay="30";
+					break;
+				case 2:
+					if((thang =="2" && nam %400==0 )||(nam %4 == 0 && nam%100!=0)){
+						ngay="29";
+					}
+					else
+						ngay = "28";
+					break;
+			}
+
+			var xuat= "Tháng " +thang+ " Năm "+nam+" có "+ngay+" ngày";
+			document.getElementById('input_ket_qua').value =xuat;
+		}
+
+		
+	</script>
+
+
+</body>
+</html>
